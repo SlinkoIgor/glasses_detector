@@ -10,6 +10,12 @@ Classification model: Mobile Net V3 Small (minimalistic), trained on a dataset h
 
 Classification part works ~20ms on i5 CPU for 1 image.
 
+Train samples:<br>
+<img src="docs/crop.png" width=400px>
+
+Test samples:<br>
+<img src="docs/crop_2.png" width=400px>
+
 # Installation:
 git clone https://github.com/SlinkoIgor/glasses_detector.git
 cd glasses_detector
@@ -34,7 +40,10 @@ predictor.predict_on_image_path('test_data/example_data_glasses/with_glasses/0.j
 - Bad landmarks detection on faces with masks
 - Runs slowly on CPU when utilizing CNN for landmark detection. You can switch it off
 
-Current landmark detector works really good on most of images and it's really fast on CPU in cases in cases when dlib recognizes face, otherwise it switches to cnn approach which is significantly slower on CPU
+Current landmark detector works really good on most of images and it's really fast on CPU in cases in cases when dlib recognizes face, otherwise it switches to cnn approach which is significantly slower on CPU.
+
+Learning curves for classifier are provided below:<br>
+<img src="docs/training%20curves%20.png" width=500px>
 
 # Ways to improve
 Maybe it'll be a good idea to try these landmark detectors:
@@ -47,3 +56,8 @@ Glasses classifier works perfectly on my test examples (found in Google). But gi
 
 Also, no augmentations were harmed during the train procedure – an unfortunate omission.
 
+# Post Scriptum:
+It was fun!<br>
+The first approach was to use https://github.com/TianxingWu/realtime-glasses-detection . It works on CPU in real time and it does a great job with simple images.<br>
+Then I wasted some time training to train a glasses detector and after all switched to the current solution.<br>
+Thanks for this task<br>
