@@ -2,7 +2,7 @@
 indicates whether the person is wearing glasses. Glasses that are not worn on the bridge of the nose are not classified as worn.
 
 # Operating principle:
-With the help of facial landmark detection, a rectangle with the eyes of a person is determined. Next, CNN is used to classify whether there are points in this rectangle.
+With the help of facial landmark detection, a rectangle with the eyes of a person is determined. Next, CNN is used to classify whether there are glasses in this rectangle.
 
 Model for facial landmark detection: https://github.com/ageitgey/face_recognition
 
