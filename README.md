@@ -6,7 +6,9 @@ With the help of facial landmark detection, a rectangle with the eyes of a perso
 
 Model for facial landmark detection: https://github.com/ageitgey/face_recognition
 
-Classification model: Mobile Net V3 Small (minimalistic), trained on a dataset https://www.kaggle.com/jeffheaton/glasses-or-no-glasses , with preprocessing
+Classification model: Mobile Net V3 Small (minimalistic), trained on a dataset https://www.kaggle.com/jeffheaton/glasses-or-no-glasses , with preprocessing . Classification network was then quantized to fp16 resulting with ~2MB size.
+
+Classification part works ~20ms on i5 CPU for 1 image.
 
 # Installation:
 git clone https://github.com/SlinkoIgor/glasses_detector.git
