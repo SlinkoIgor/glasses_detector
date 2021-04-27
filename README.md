@@ -19,7 +19,29 @@ On the image folder:
 python test.py --dir=test_data/example_data_glasses/with_glasses
 ```
 
-# Known issues and ways to improve:
+On one image:
+```python
+from test import GlassesPredictor
+predictor = GlassesPredictor(model_path='weights/fp16_model.tflite')
+predictor.predict_on_image_path('test_data/example_data_glasses/with_glasses/0.jpg')
+>>> True
+```
+
+# Known issues:
 - Bad landmarks detection on rotated images (make sure images are not rotated before running)
 - Bad landmarks detection on faces with masks
-- Runs slowly on CPU when utilizing cnn for landmarks detection. You can switch it off
+- Runs slowly on CPU when utilizing CNN for landmark detection. You can switch it off
+
+Current landmark detector works really good on most of images and it's really fast on CPU in cases in cases when dlib recognizes face, otherwise it switches to cnn approach which is significantly slower on CPU
+
+# Ways to improve
+Maybe it'll be a good idea to try these landmark detectors:
+- https://github.com/1adrianb/face-alignment
+- https://github.com/HRNet/HRNet-Facial-Landmark-Detection
+
+Glasses classifier works perfectly on my test examples (found in Google). But given more time I'd prefer to increase generalizability by adding a couple of datasets:
+- http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+- https://www.kaggle.com/ashish2001/512x512-face-parsing-segmentation-tfrecords
+
+Also, no augmentations were harmed during the train procedure – an unfortunate omission.
+
