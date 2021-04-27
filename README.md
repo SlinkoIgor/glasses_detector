@@ -17,9 +17,11 @@ Test samples:<br>
 <img src="docs/crop_2.png" width=400px>
 
 # Installation:
+```bash
 git clone https://github.com/SlinkoIgor/glasses_detector.git
 cd glasses_detector
 pip install -r requirements.txt
+```
 
 # Example:
 On the image folder:
